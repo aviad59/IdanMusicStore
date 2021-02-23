@@ -1,0 +1,27 @@
+﻿body {
+    margin: 0;
+}
+html{
+    font-family: sans-serif;
+}
+*{
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    font-kerning: auto;
+    background-color: #282726;
+}
+
+.p1 {
+    font-family: "Georgia", Times, serif;
+    color: #EDF5E1;
+}
+
+.p2 {
+    font-family: "Georgia", Helvetica, sans-serif;
+    color: whitesmoke;
+}
+
+.p3 {
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: whitesmoke;
+}
