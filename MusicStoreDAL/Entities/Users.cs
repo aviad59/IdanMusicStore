@@ -55,5 +55,36 @@ namespace MusicStoreDAL
             string sql = $"UPDATE {tableName} SET U_isAdmin = {isAdmin} WHERE U_userID = '{UserID}'";
             OleDbHelper.DoQuery(sql);
         }
+
+        /// <summary>
+        /// Update the user password 
+        /// </summary>
+        public static void SetPassword(string UserID, string password)
+        {
+            string sql = $"UPDATE {tableName} SET U_Password = {password} WHERE U_userID = '{UserID}'";
+            OleDbHelper.DoQuery(sql);
+        }
+
+        /// <summary>
+        /// Return the a requested user Dataset by its email
+        /// </summary>
+        /// <param name="UserID"></param>
+        /// <returns></returns>
+        public static DataSet GetUserByEmail(string email)
+        {
+            string sql = $"SELECT * FROM {tableName} WHERE U_userID = '{email}'";
+            return OleDbHelper.Fill(sql, tableName);
+        }
+
+        /// <summary>
+        /// Check if user with the request Email Exist
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public static bool doesEmailExist(string email)
+        {
+            DataSet info = GetUserByEmail(email);
+            return info.Tables[0].Rows.Count > 0;
+        }
     }
 }
