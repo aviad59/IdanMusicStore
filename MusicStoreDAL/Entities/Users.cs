@@ -37,7 +37,7 @@ namespace MusicStoreDAL
         }
 
         /// <summary>
-        /// Update the the user values in the database
+        /// Update the user values in the database
         /// </summary>
         public static void UpdateUser(string UserID, bool NEW_isAdmin, string NEW_firstName, string NEW_lastName, string NEW_password, string NEW_email)
         {
