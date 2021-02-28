@@ -22,10 +22,10 @@ namespace MusicStoreDAL.Entities
         /// <param name="description"></param>
         /// <param name="image"></param>
         /// <returns></returns>
-        public static int AddNewProduct(string name, string supplierID, string categoryID, string price, string color, string description, string image)
+        public static int AddNewProduct(string name, int supplierID, int categoryID, int price, string color, string description, string image)
         {
             string sql = $"INSERT INTO {tableName} ( P_ProductName, P_SupplierID, P_CategoryID, P_Price, P_Color, P_Description, P_Picture) " +
-                $"VALUES ('{name}', '{supplierID}', '{categoryID}', '{price}', '{color}', '{description}', '{image}')";
+                $"VALUES ('{name}', {supplierID}, {categoryID}, {price}, '{color}', '{description}', '{image}')";
             return OleDbHelper.InsertWithAutoNumKey(sql);
         }
 
@@ -40,7 +40,7 @@ namespace MusicStoreDAL.Entities
         }
 
         /// <summary>
-        /// Remove user by its ID.
+        /// Remove product by its ID.
         /// </summary>
         /// <param name="productID"></param>
         public static void removeProduct(string productID)
@@ -73,7 +73,7 @@ namespace MusicStoreDAL.Entities
         /// <param name="image"></param>
         public static void updateProduct(string productID, string name, string supplierID, string categoryID, string price, string color, string description, string image)
         {
-            string sql = $"UPDATE {tableName} SET P_ProductName = '{name}', P_SupplierID = '{supplierID}', P_CategoryID = '{categoryID}', P_Price = '{price}'," +
+            string sql = $"UPDATE {tableName} SET P_ProductName = '{name}', P_SupplierID = {supplierID}, P_CategoryID = {categoryID}, P_Price = {price}," +
                 $" P_Color = '{color}', P_Description = '{description}', P_Picture = '{image}' WHERE P_ItemID = {productID}";
             OleDbHelper.DoQuery(sql);
         }
@@ -85,7 +85,7 @@ namespace MusicStoreDAL.Entities
         /// <returns></returns>
         public static DataSet productsByCategory(string categoryID)
         {
-            string sql = $"SELECT * FROM {tableName} WHERE P_CategoryID = '{categoryID}'";
+            string sql = $"SELECT * FROM {tableName} WHERE P_CategoryID = {categoryID}";
             return OleDbHelper.Fill(sql, tableName);
         }
 

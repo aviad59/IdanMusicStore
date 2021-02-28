@@ -22,8 +22,20 @@ namespace MusicStoreDAL
         /// <returns></returns>
         public static int AddUser(bool isAdmin, string firstName, string lastName, string password, string email)
         {
-            string sql = $"INSERT INTO {tableName} ( U_isAdmin, U_FirstName, U_LastName, U_Password, U_Email) VALUES ({isAdmin}, '{firstName}', '{lastName}', '{password}', '{email}')";
+            string sql = $"INSERT INTO {tableName} (U_isAdmin, U_FirstName, U_LastName, U_Password, U_Email) VALUES ({isAdmin}, '{firstName}', '{lastName}', '{password}', '{email}')";
             return OleDbHelper.InsertWithAutoNumKey(sql);
+        }
+
+        /// <summary>
+        /// Remove user by its ID
+        /// </summary>
+        /// <param name="userID"></param>
+        public static void removeUser(string userID)
+        {
+            string sql = $"DELETE FROM {tableName} WHERE U_userID = '{userID}'";
+            OleDbHelper.DoQuery(sql);
+            sql = $"DELETE FROM PreferedCategories WHERE PC_UserID = '{userID}'";
+            OleDbHelper.DoQuery(sql);
         }
 
         /// <summary>
@@ -39,9 +51,9 @@ namespace MusicStoreDAL
         /// <summary>
         /// Update the user values in the database
         /// </summary>
-        public static void UpdateUser(string UserID, bool NEW_isAdmin, string NEW_firstName, string NEW_lastName, string NEW_password, string NEW_email)
+        public static void UpdateUser(int UserID, bool NEW_isAdmin, string NEW_firstName, string NEW_lastName, string NEW_password, string NEW_email)
         {
-            string sql = $"UPDATE {tableName} SET U_isAdmin = {NEW_isAdmin}, U_FirstName = '{NEW_firstName}', U_LastName = '{NEW_lastName}', U_Password = '{NEW_password}', U_Email = '{NEW_email}' WHERE U_userID = '{UserID}'";
+            string sql = $"UPDATE {tableName} SET U_isAdmin = {NEW_isAdmin}, U_FirstName = '{NEW_firstName}', U_LastName = '{NEW_lastName}', U_Password = '{NEW_password}', U_Email = '{NEW_email}' WHERE U_userID = {UserID}";
             OleDbHelper.DoQuery(sql);
         }
 
@@ -50,7 +62,7 @@ namespace MusicStoreDAL
         /// </summary>
         /// <param name="UserID"></param>
         /// <param name="isAdmin"></param>
-        public static void SetAdmin(string UserID, bool isAdmin)
+        public static void SetAdmin(int UserID, bool isAdmin)
         {
             string sql = $"UPDATE {tableName} SET U_isAdmin = {isAdmin} WHERE U_userID = '{UserID}'";
             OleDbHelper.DoQuery(sql);
@@ -59,7 +71,7 @@ namespace MusicStoreDAL
         /// <summary>
         /// Update the user password 
         /// </summary>
-        public static void SetPassword(string UserID, string password)
+        public static void SetPassword(int UserID, string password)
         {
             string sql = $"UPDATE {tableName} SET U_Password = {password} WHERE U_userID = '{UserID}'";
             OleDbHelper.DoQuery(sql);
@@ -70,9 +82,20 @@ namespace MusicStoreDAL
         /// </summary>
         /// <param name="UserID"></param>
         /// <returns></returns>
-        public static DataSet GetUserByEmail(string email)
+        public static DataSet getUserByEmail(string email)
         {
             string sql = $"SELECT * FROM {tableName} WHERE U_userID = '{email}'";
+            return OleDbHelper.Fill(sql, tableName);
+        }
+
+        /// <summary>
+        /// Return User ID by name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static DataSet getUserIDByName(string name)
+        {
+            string sql = $"SELECT {tableName}.U_userID FROM {tableName} WHERE {name} = ({tableName}.U_FirstName + ' ' + {tableName}.U_LastName)";
             return OleDbHelper.Fill(sql, tableName);
         }
 
