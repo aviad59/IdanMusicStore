@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="App_Code\Connect.cs" />
     <Compile Include="App_Code\OleDbHelper.cs" />
+    <Compile Include="Entities\OrderItems.cs" />
     <Compile Include="Entities\Orders.cs" />
     <Compile Include="Entities\PreferedCategories.cs" />
     <Compile Include="Entities\Products.cs" />

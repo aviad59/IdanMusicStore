@@ -99,6 +99,18 @@ namespace MusicStoreDAL
             return OleDbHelper.Fill(sql, tableName);
         }
 
+
+        /// <summary>
+        /// Return the a requested user Dataset by its email
+        /// </summary>
+        /// <param name="UserID"></param>
+        /// <returns></returns>
+        public static DataSet GetUserByEmail(string email)
+        {
+            string sql = $"SELECT * FROM {tableName} WHERE U_userID = '{email}'";
+            return OleDbHelper.Fill(sql, tableName);
+        }
+
         /// <summary>
         /// Check if user with the request Email Exist
         /// </summary>
