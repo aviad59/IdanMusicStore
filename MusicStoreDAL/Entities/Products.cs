@@ -7,7 +7,7 @@ using System.Data;
 
 namespace MusicStoreDAL.Entities
 {
-    class Products
+    public class Products
     {
         static string tableName = "Products";
 
@@ -22,7 +22,7 @@ namespace MusicStoreDAL.Entities
         /// <param name="description"></param>
         /// <param name="image"></param>
         /// <returns></returns>
-        public static int AddNewProduct(string name, int supplierID, int categoryID, int price, string color, string description, string image)
+        public static int AddNewProduct(string name, int supplierID, int categoryID, double price, string color, string description, string image)
         {
             string sql = $"INSERT INTO {tableName} ( P_ProductName, P_SupplierID, P_CategoryID, P_Price, P_Color, P_Description, P_Picture) " +
                 $"VALUES ('{name}', {supplierID}, {categoryID}, {price}, '{color}', '{description}', '{image}')";
@@ -54,9 +54,9 @@ namespace MusicStoreDAL.Entities
         /// </summary>
         /// <param name="productID"></param>
         /// <param name="NEW_Price"></param>
-        public static void updatePrice(string productID, string NEW_Price)
+        public static void updatePrice(string name, string NEW_Price)
         {
-            string sql = $"UPDATE {tableName} SET P_Price = {NEW_Price} WHERE P_ItemID = '{productID}'";
+            string sql = $"UPDATE {tableName} SET P_Price = {NEW_Price} WHERE P_ProductName = '{name}'";
             OleDbHelper.DoQuery(sql);
         }
 
@@ -71,10 +71,10 @@ namespace MusicStoreDAL.Entities
         /// <param name="color"></param>
         /// <param name="description"></param>
         /// <param name="image"></param>
-        public static void updateProduct(string productID, string name, string supplierID, string categoryID, string price, string color, string description, string image)
+        public static void updateProduct(string name, string supplierID, string categoryID, string price, string color, string description, string image)
         {
-            string sql = $"UPDATE {tableName} SET P_ProductName = '{name}', P_SupplierID = {supplierID}, P_CategoryID = {categoryID}, P_Price = {price}," +
-                $" P_Color = '{color}', P_Description = '{description}', P_Picture = '{image}' WHERE P_ItemID = {productID}";
+            string sql = $"UPDATE {tableName} SET P_SupplierID = {supplierID}, P_CategoryID = {categoryID}, P_Price = {price}," +
+                $" P_Color = '{color}', P_Description = '{description}', P_Picture = '{image}' WHERE P_ProductName = {name}";
             OleDbHelper.DoQuery(sql);
         }
 
@@ -83,9 +83,9 @@ namespace MusicStoreDAL.Entities
         /// </summary>
         /// <param name="categoryID"></param>
         /// <returns></returns>
-        public static DataSet productsByCategory(string categoryID)
+        public static DataSet productsByCategory(string category)
         {
-            string sql = $"SELECT * FROM {tableName} WHERE P_CategoryID = {categoryID}";
+            string sql = $"SELECT * FROM {tableName} WHERE C_Category = {category}";
             return OleDbHelper.Fill(sql, tableName);
         }
 

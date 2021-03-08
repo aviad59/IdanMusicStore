@@ -7,7 +7,7 @@ using System.Data;
 
 namespace MusicStoreDAL.Entities
 {
-    class PreferedCategories
+    public class PreferedCategories
     {
         static string tableName = "PreferedCategories";
 

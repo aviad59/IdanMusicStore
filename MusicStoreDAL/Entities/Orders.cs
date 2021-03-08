@@ -7,7 +7,7 @@ using System.Data;
 
 namespace MusicStoreDAL.Entities
 {
-    class Orders
+    public class Orders
     {
         static string tableName = "Orders";
 

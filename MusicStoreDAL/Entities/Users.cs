@@ -7,7 +7,7 @@ using System.Data;
 
 namespace MusicStoreDAL
 {
-    class Users
+    public class Users
     {
         static string tableName = "Users";
 
@@ -51,9 +51,10 @@ namespace MusicStoreDAL
         /// <summary>
         /// Update the user values in the database
         /// </summary>
-        public static void UpdateUser(int UserID, bool NEW_isAdmin, string NEW_firstName, string NEW_lastName, string NEW_password, string NEW_email)
+        public static void UpdateUser(string email, string NEW_firstName, string NEW_lastName, string NEW_password)
         {
-            string sql = $"UPDATE {tableName} SET U_isAdmin = {NEW_isAdmin}, U_FirstName = '{NEW_firstName}', U_LastName = '{NEW_lastName}', U_Password = '{NEW_password}', U_Email = '{NEW_email}' WHERE U_userID = {UserID}";
+            string sql = $"UPDATE {tableName} SET U_FirstName = '{NEW_firstName}', U_LastName = '{NEW_lastName}', U_Password = '{NEW_password}', " +
+                $" WHERE email = {email}";
             OleDbHelper.DoQuery(sql);
         }
 
@@ -62,9 +63,9 @@ namespace MusicStoreDAL
         /// </summary>
         /// <param name="UserID"></param>
         /// <param name="isAdmin"></param>
-        public static void SetAdmin(int UserID, bool isAdmin)
+        public static void SetAdmin(string email, bool isAdmin)
         {
-            string sql = $"UPDATE {tableName} SET U_isAdmin = {isAdmin} WHERE U_userID = '{UserID}'";
+            string sql = $"UPDATE {tableName} SET U_isAdmin = {isAdmin} WHERE U_Email = '{email}'";
             OleDbHelper.DoQuery(sql);
         }
 
@@ -95,10 +96,21 @@ namespace MusicStoreDAL
         /// <returns></returns>
         public static DataSet getUserIDByName(string name)
         {
-            string sql = $"SELECT {tableName}.U_userID FROM {tableName} WHERE {name} = ({tableName}.U_FirstName + ' ' + {tableName}.U_LastName)";
+            string[] seperatedName = name.Split(' ');
+            string sql = $"SELECT {tableName}.U_userID FROM {tableName} WHERE U_FirstName = '{seperatedName[0]}' AND U_LastName = '{seperatedName[0]}'";
             return OleDbHelper.Fill(sql, tableName);
         }
 
+        /// <summary>
+        /// Return User ID by email
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static DataSet getUserIDByEmail(string email)
+        {
+            string sql = $"SELECT {tableName}.U_userID FROM {tableName} WHERE U_Email = '{email}'";
+            return OleDbHelper.Fill(sql, tableName);
+        }
 
         /// <summary>
         /// Return the a requested user Dataset by its email

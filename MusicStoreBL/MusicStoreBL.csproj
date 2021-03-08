@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C42C7C2D-DFE1-4904-9380-A0A19AC294C8}</ProjectGuid>
+    <ProjectGuid>{F0DDD3DB-A3A9-4B59-9CB5-8286D7883254}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MusicStoreDAL</RootNamespace>
-    <AssemblyName>MusicStoreDAL</AssemblyName>
+    <RootNamespace>MusicStoreBL</RootNamespace>
+    <AssemblyName>MusicStoreBL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,24 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\Connect.cs" />
-    <Compile Include="App_Code\OleDbHelper.cs" />
-    <Compile Include="Entities\Category.cs" />
-    <Compile Include="Entities\OrderItems.cs" />
-    <Compile Include="Entities\Orders.cs" />
-    <Compile Include="Entities\PreferedCategories.cs" />
-    <Compile Include="Entities\Products.cs" />
-    <Compile Include="Entities\Users.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\MusicStoreDataBase.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <ProjectReference Include="..\MusicStoreDAL\MusicStoreDAL.csproj">
+      <Project>{c42c7c2d-dfe1-4904-9380-a0a19ac294c8}</Project>
+      <Name>MusicStoreDAL</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

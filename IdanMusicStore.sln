@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{4B0A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStoreDAL", "MusicStoreDAL\MusicStoreDAL.csproj", "{C42C7C2D-DFE1-4904-9380-A0A19AC294C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStoreBL", "MusicStoreBL\MusicStoreBL.csproj", "{F0DDD3DB-A3A9-4B59-9CB5-8286D7883254}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C42C7C2D-DFE1-4904-9380-A0A19AC294C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C42C7C2D-DFE1-4904-9380-A0A19AC294C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C42C7C2D-DFE1-4904-9380-A0A19AC294C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0DDD3DB-A3A9-4B59-9CB5-8286D7883254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0DDD3DB-A3A9-4B59-9CB5-8286D7883254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0DDD3DB-A3A9-4B59-9CB5-8286D7883254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0DDD3DB-A3A9-4B59-9CB5-8286D7883254}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
