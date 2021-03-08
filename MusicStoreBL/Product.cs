@@ -8,12 +8,12 @@ using System.Data;
 
 namespace MusicStoreBL
 {
-    class Product
+    public class Product
     {
         public string name { get; set; }
         public int supplier { get; set; }
         public int category { get; set; }
-        public double price { get; set; }
+        public decimal price { get; set; }
         public string color { get; set; }
         public string description { get; set; }
         public string image { get; set; }
@@ -28,17 +28,17 @@ namespace MusicStoreBL
         /// <param name="color"></param>
         /// <param name="description"></param>
         /// <param name="image"></param>
-        public Product(string name, string supplier, string category, string price, string color, string description, string image)
+        public Product(string name, int supplier, int category, decimal price, string color, string description, string image)
         {
             this.name = name;
-            this.supplier = int.Parse(supplier);
-            this.category = int.Parse(category);
-            this.price = Convert.ToDouble(price);
+            this.supplier = supplier;
+            this.category = category;
+            this.price = price;
             this.color = color;
             this.description = description;
             this.image = image;
 
-            Products.AddNewProduct(name, int.Parse(supplier), int.Parse(category), Convert.ToDouble(price), color, description, image);
+            Products.AddNewProduct(name, supplier, category, price, color, description, image);
         }
 
         /// <summary>
@@ -48,9 +48,9 @@ namespace MusicStoreBL
         public Product(DataRow product)
         {
             name = product["P_ProductName"].ToString();
-            supplier = int.Parse(product["P_SupplierID"].ToString());
-            category = int.Parse(product["P_CategoryID"].ToString());
-            price = Convert.ToDouble(product["P_Price"].ToString());
+            supplier = (int)product["P_SupplierID"];
+            category = (int)product["P_CategoryID"];
+            price = (decimal)product["P_Price"];
             color = product["P_Color"].ToString();
             description = product["P_Description"].ToString();
             image = product["P_Picture"].ToString();
@@ -90,5 +90,19 @@ namespace MusicStoreBL
             return Products.viewAllProducts();
         }
 
+        /// <summary>
+        /// Return all products in a list
+        /// </summary>
+        /// <returns></returns>
+        public static List<Product> getListAll()
+        {
+            DataSet ds = getAll();
+            List<Product> li = new List<Product>();
+            foreach (DataRow item in ds.Tables[0].Rows)
+            {
+                li.Add(new Product(item));
+            }
+            return li;
+        }
     }
 } 

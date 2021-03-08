@@ -22,7 +22,7 @@ namespace MusicStoreDAL.Entities
         /// <param name="description"></param>
         /// <param name="image"></param>
         /// <returns></returns>
-        public static int AddNewProduct(string name, int supplierID, int categoryID, double price, string color, string description, string image)
+        public static int AddNewProduct(string name, int supplierID, int categoryID, decimal price, string color, string description, string image)
         {
             string sql = $"INSERT INTO {tableName} ( P_ProductName, P_SupplierID, P_CategoryID, P_Price, P_Color, P_Description, P_Picture) " +
                 $"VALUES ('{name}', {supplierID}, {categoryID}, {price}, '{color}', '{description}', '{image}')";

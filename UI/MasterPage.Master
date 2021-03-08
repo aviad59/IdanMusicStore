@@ -1,61 +1,71 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="UI.MasterPage" %>
+
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <title>Idans's Music Store</title>
-    <asp:ContentPlaceHolder ID="head" runat="server">           
+    <title>Idan's Music Store</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link rel="stylesheet" href="CSS/StyleSheet.css"> 
+    <link rel="stylesheet" href="CSS/StyleSheet.css">
     <style>
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #303030;
-    }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #303030;
+        }
 
-    li {
-      float: left;
-      border-right:1px solid #303030;
-    }
+        li {
+            float: left;
+            border-right: 1px solid #303030;
+        }
 
-    li:last-child {
-      border-right: none;
-    }
+            li:last-child {
+                border-right: none;
+            }
 
-    li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
 
-    li a:hover:not(.active) {
-      background-color: #282726;
-    }
-    .image{
-        position: absolute;
-        right: 0px;
-        top: 0px;
-    }
-</style>
+                li a:hover:not(.active) {
+                    background-color: #282726;
+                }
+
+        .image {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+
+    </style>
 </head>
 <body>
-    <ul>        
-        <li><a href="HomePage.aspx">Home</a></li>
-        <li><a href="Products.aspx">Products</a></li>
-        <li><a href="Profile.aspx">Profile</a></li>
-        <li><a href="Cart.aspx">Cart</a></li>
-        <li><img class="image" src="Pictures/Misc/Logo.png" alt="Logo" style="height: 47px; width: 350px" ></li>
-        
-    </ul>
-    
-    
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        <p>
-        </p>
-    </asp:ContentPlaceHolder>
+    <form id="navForm" runat="server">
+        <nav>
+            <ul>
+                <li><asp:Button ID="HomeBtn" runat="server" Text="Home" OnClick="HomeBtn_Click" /></li>
+                <li><asp:Button ID="ProductsBtn" runat="server" Text="Products" OnClick="ProductsBtn_Click" /></li>
+                <li><asp:Button ID="ProfileBtn" runat="server" Text="Profile" OnClick="ProfileBtn_Click" /></li>
+                <li><asp:Button ID="CartBtn" runat="server" Text="Cart" OnClick="CartBtn_Click" /></li>
+            </ul>
+            <ul>
+                <li><asp:ImageButton ID="ImageButton1" ImageUrl="Pictures/Misc/Logo.png" Style="align-self:end; height: 47px; width: 350px" OnClick="ImageButton1_Click" runat="server" /></li>
+            </ul>
+        </nav>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </form>
+
+    <footer>
+        <p>All rights reserved ©</p>
+    </footer>
 </body>
 </html>

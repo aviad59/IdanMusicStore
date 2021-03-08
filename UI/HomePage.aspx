@@ -5,17 +5,25 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <h1 class="p1" style="background-color:black">Welcome to IdanMusicStore! </h1>
     <br />
+    <br />
+    <h1 class="p1">Welcome to IdanMusicStore! </h1>
     <h3 class="p2">We are strongly encourage you to take a look on out product, we're selling almost everything related to music!</h3> 
     <br />
+
     <h2 class="p1">Updates:</h2>
-    <br />
-    <div>
+    <article>
+        <h3 class="p2">23.02.2021</h3>
+        <p class="p3">
+            Bug fixed!! <br />
+            We worked around the clock to fix all the bugs you've reported about!
+        </p>
+    </article>
+    <article>
         <h3 class="p2">10.02.2021</h3>
         <p class="p3">
             From now on you can also buy Drums! <br />
-            checking out the product tab you will find a 
+            checking out the product tab you will find a new section for all kind of drums!
         </p>
-    </div>
+    </article>
 </asp:Content>
