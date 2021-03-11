@@ -24,13 +24,13 @@ namespace UI
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
 
         /// <summary>
-        /// navForm control.
+        /// Form control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm navForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm Form;
 
         /// <summary>
         /// HomeBtn control.
@@ -69,13 +69,13 @@ namespace UI
         protected global::System.Web.UI.WebControls.Button CartBtn;
 
         /// <summary>
-        /// ImageButton1 control.
+        /// LogoImgBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        protected global::System.Web.UI.WebControls.ImageButton LogoImgBtn;
 
         /// <summary>
         /// ContentPlaceHolder1 control.

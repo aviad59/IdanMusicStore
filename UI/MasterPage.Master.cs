@@ -14,7 +14,7 @@ namespace UI
 
         }
 
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        protected void LogoImgBtn_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("HomePage.aspx");
         }

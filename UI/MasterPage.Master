@@ -1,6 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="UI.MasterPage" %>
 
 <!DOCTYPE html>
+
 <html>
 <head runat="server">
     <title>Idan's Music Store</title>
@@ -13,7 +14,7 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #303030;
+            background-color: #7F0808;
         }
 
         li {
@@ -34,7 +35,7 @@
             }
 
                 li a:hover:not(.active) {
-                    background-color: #282726;
+                    background-color: #FFFFFF;
                 }
 
         .image {
@@ -43,20 +44,46 @@
             top: 0px;
         }
 
+        .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        .nav-item {
+            position: relative;
+        }
     </style>
 </head>
 <body>
-    <form id="navForm" runat="server">
+    <form id="Form" runat="server">
         <nav>
-            <ul>
-                <li><asp:Button ID="HomeBtn" runat="server" Text="Home" OnClick="HomeBtn_Click" /></li>
-                <li><asp:Button ID="ProductsBtn" runat="server" Text="Products" OnClick="ProductsBtn_Click" /></li>
-                <li><asp:Button ID="ProfileBtn" runat="server" Text="Profile" OnClick="ProfileBtn_Click" /></li>
-                <li><asp:Button ID="CartBtn" runat="server" Text="Cart" OnClick="CartBtn_Click" /></li>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <asp:Button ID="HomeBtn" runat="server" Text="Home" OnClick="HomeBtn_Click" />
+
+                </li>
+
+                <li class="nav-item">
+                    <asp:Button ID="ProductsBtn" runat="server" Text="Products" OnClick="ProductsBtn_Click" />
+
+                </li>
+
+                <li class="nav-item">
+                    <asp:Button ID="ProfileBtn" runat="server" Text="Profile" OnClick="ProfileBtn_Click" />
+                </li>
+
+                <li class="nav-item">
+                    <asp:Button ID="CartBtn" runat="server" Text="Cart" OnClick="CartBtn_Click" />
+                </li>
+
+                &nbsp
+
+                <li class="nav-item" style="margin-left:30%;">
+                    <asp:ImageButton ID="LogoImgBtn" ImageUrl="Pictures/Misc/Logo.png" Style="height: 47px; width: 350px" OnClick="LogoImgBtn_Click" runat="server" />
+                </li>
+
             </ul>
-            <ul>
-                <li><asp:ImageButton ID="ImageButton1" ImageUrl="Pictures/Misc/Logo.png" Style="align-self:end; height: 47px; width: 350px" OnClick="ImageButton1_Click" runat="server" /></li>
-            </ul>
+
         </nav>
 
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
