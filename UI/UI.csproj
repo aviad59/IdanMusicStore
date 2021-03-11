@@ -73,6 +73,7 @@
     <Content Include="Cart.aspx" />
     <Content Include="CSS\StyleSheet.css" />
     <Content Include="HomePage.aspx" />
+    <Content Include="Pictures\Misc\Background.jpg" />
     <Content Include="Products.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="SignUp.aspx" />
@@ -134,7 +135,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pictures\Misc\" />
     <Folder Include="Pictures\Products\Drums\" />
     <Folder Include="Pictures\Products\Guitars\" />
     <Folder Include="Pictures\Products\Misc\" />

@@ -22,14 +22,14 @@ namespace MusicStoreDAL.Entities
         }
 
         /// <summary>
-        /// Return all orders by this user id.
+        /// Return all orders by this user email.
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public static DataSet searchByID(string ID)
+        public static DataSet searchByID(string email)
         {
             string sql = $"SELECT {tableName}.O_OrderID, Users.U_FirstName, Users.U_LastName, {tableName}.O_OrderDate, {tableName}.O_ShippingAddress " +
-                $"FROM {tableName} INNER JOIN Users ON {tableName}.O_CustomerID=Users.U_userID";
+                $"FROM {tableName} INNER JOIN Users ON {tableName}.O_CustomerID={email}";
             return OleDbHelper.Fill(sql, tableName);
         }
 

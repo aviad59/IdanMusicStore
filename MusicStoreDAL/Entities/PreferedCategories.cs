@@ -16,9 +16,9 @@ namespace MusicStoreDAL.Entities
         /// </summary>
         /// <param name="userID"></param>
         /// <returns></returns>
-        public static DataSet getUserPreferdCategories(int userID)
+        public static DataSet getUserPreferdCategories(string email)
         {
-            string sql = $"SELECT * FROM {tableName} WHERE PC_UserID = {userID}";
+            string sql = $"SELECT * FROM {tableName} WHERE PC_UserEmail = '{email}'";
             return OleDbHelper.Fill(sql, tableName);
         }
 

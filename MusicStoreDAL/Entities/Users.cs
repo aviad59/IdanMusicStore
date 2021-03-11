@@ -22,7 +22,8 @@ namespace MusicStoreDAL
         /// <returns></returns>
         public static int AddUser(bool isAdmin, string firstName, string lastName, string password, string email)
         {
-            string sql = $"INSERT INTO {tableName} (U_isAdmin, U_FirstName, U_LastName, U_Password, U_Email) VALUES ({isAdmin}, '{firstName}', '{lastName}', '{password}', '{email}')";
+            string sql = $"INSERT INTO {tableName} (U_isAdmin, U_FirstName, U_LastName, U_Password, U_Email) " +
+                $"VALUES ({isAdmin}, '{firstName}', '{lastName}', '{password}', '{email}')";
             return OleDbHelper.InsertWithAutoNumKey(sql);
         }
 
@@ -85,7 +86,7 @@ namespace MusicStoreDAL
         /// <returns></returns>
         public static DataSet getUserByEmail(string email)
         {
-            string sql = $"SELECT * FROM {tableName} WHERE U_userID = '{email}'";
+            string sql = $"SELECT * FROM {tableName} WHERE U_Email = '{email}'";
             return OleDbHelper.Fill(sql, tableName);
         }
 
@@ -119,7 +120,7 @@ namespace MusicStoreDAL
         /// <returns></returns>
         public static DataSet GetUserByEmail(string email)
         {
-            string sql = $"SELECT * FROM {tableName} WHERE U_userID = '{email}'";
+            string sql = $"SELECT * FROM {tableName} WHERE U_Email = '{email}'";
             return OleDbHelper.Fill(sql, tableName);
         }
 

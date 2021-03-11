@@ -3,14 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div style="margin-top: 50px;">
-        <br />
-        <div class="form-row">
-            <asp:Label for="username" ID="Uname" runat="server" Text="Username:"></asp:Label>
-            <asp:TextBox ID="username" runat="server" CssClass="form-control" placeholder="Enter Username..." CausesValidation="True"></asp:TextBox>
-            <asp:RequiredFieldValidator ValidationGroup="SignUpValidation" ID="RequiredUsernameValidator" runat="server" ErrorMessage="Required" ControlToValidate="username" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ValidationGroup="SignUpValidation" ID="RegularExpressionUsernameValidator" runat="server" ErrorMessage="Username must have 3 charachters minimum" ControlToValidate="username" ValidationExpression="^[\s\S]{3,}$" Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>
-            <asp:CustomValidator ValidationGroup="SignUpValidation" ID="UsernameExistsValidator" runat="server" ErrorMessage="Username already in use :(" ControlToValidate="username" OnServerValidate="UsernameExistsValidator_ServerValidate" Display="Dynamic" ForeColor="Red"></asp:CustomValidator>
-        </div>
+
 
         <br />
 

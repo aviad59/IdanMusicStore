@@ -1,14 +1,9 @@
 ﻿body {
     margin: 0;
+    background-color: blanchedalmond !important;
 }
 html{
     font-family: sans-serif;
-}
-*{
-    box-sizing: border-box;
-    text-rendering: optimizeLegibility;
-    font-kerning: auto;
-    background-color: blanchedalmond;
 }
 
 .p1 {

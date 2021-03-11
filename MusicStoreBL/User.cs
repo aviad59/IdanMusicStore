@@ -36,10 +36,10 @@ namespace MusicStoreBL
             this.password = password;
             this.email = email;
             this.isAdmin = isAdmin;
-           
-            Users.AddUser(isAdmin, firstName, lastName, password, email);
 
-            this.id = int.Parse(Users.getUserIDByEmail(email).Tables[0].Rows[0].ToString());
+            this.id = Users.AddUser(isAdmin, firstName, lastName, password, email);
+
+            
         }
 
         /// <summary>
@@ -94,6 +94,25 @@ namespace MusicStoreBL
         public void setPassword(string newPassword)
         {
             Users.SetPassword(id, newPassword);
+        }
+
+        /// <summary>
+        /// Return whether an email exist
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public static bool isExist(string email)
+        {
+            return Users.doesEmailExist(email);
+        }
+
+        /// <summary>
+        /// Create new user
+        /// </summary>
+        /// <returns></returns>
+        public static User createUser(string firstName, string lastName, string password, string email)
+        {
+            return new User(firstName, lastName, password, email, false);
         }
     }
 }
