@@ -12,7 +12,11 @@ namespace UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["User"] != null)
+            {
+                Response.Write("<script>alert('Please logout first to create a new user!')</script>");
+                Response.Redirect("HomePage.aspx");
+            }
         }
         
         protected void EmailExistsValidator_ServerValidate(object source, ServerValidateEventArgs args)

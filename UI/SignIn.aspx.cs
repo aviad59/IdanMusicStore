@@ -7,16 +7,15 @@ using System.Web.UI.WebControls;
 
 namespace UI
 {
-    public partial class Profile : System.Web.UI.Page
+    public partial class SignIn : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["User"] == null)
+            if (Session["User"] != null)
             {
-                Response.Write("<script>alert('You cannot view you profile, \n please try login in first!')</script>");
+                Response.Write("<script>alert('Please logout first if you intend to login as another user!')</script>");
                 Response.Redirect("HomePage.aspx");
             }
-            
         }
     }
 }

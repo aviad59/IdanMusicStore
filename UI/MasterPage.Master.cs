@@ -33,6 +33,14 @@ namespace UI
         {
             Response.Redirect("Profile.aspx");
         }
+        protected void SignUp_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SignUp.aspx");
+        }        
+        protected void SignIn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SignUp.aspx");
+        }
 
         protected void CartBtn_Click(object sender, EventArgs e)
         {

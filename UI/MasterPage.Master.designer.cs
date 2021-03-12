@@ -60,6 +60,24 @@ namespace UI
         protected global::System.Web.UI.WebControls.Button ProfileBtn;
 
         /// <summary>
+        /// SignUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SignUp;
+
+        /// <summary>
+        /// SignIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SignIn;
+
+        /// <summary>
         /// CartBtn control.
         /// </summary>
         /// <remarks>

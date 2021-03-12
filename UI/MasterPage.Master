@@ -67,11 +67,19 @@
                     <asp:Button ID="ProductsBtn" runat="server" Text="Products" OnClick="ProductsBtn_Click" />
 
                 </li>
-
-                <li class="nav-item">
+                <%if (Session["User"] != null)
+                    { %>
+                    <li class="nav-item">
                     <asp:Button ID="ProfileBtn" runat="server" Text="Profile" OnClick="ProfileBtn_Click" />
                 </li>
-
+                <%}else{ %>
+                  <li class="nav-item">
+                  <asp:Button ID="SignUp" runat="server" Text="SignUp" OnClick="SignUp_Click" /> 
+                  </li>
+                  <li class="nav-item">
+                  <asp:Button ID="SignIn" runat="server" Text="Sign In" OnClick="SignIn_Click" />
+                </li>
+                <%} %>
                 <li class="nav-item">
                     <asp:Button ID="CartBtn" runat="server" Text="Cart" OnClick="CartBtn_Click" />
                 </li>
