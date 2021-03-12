@@ -43,5 +43,7 @@ namespace MusicStoreDAL.Entities
             string sql = $"SELECT COUNT(*) FROM {tableName} WHERE PC_CategoryID = {categoryID}";
             return OleDbHelper.Fill(sql, tableName);
         }
+
+
     }
 }

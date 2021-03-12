@@ -114,5 +114,44 @@ namespace MusicStoreBL
         {
             return new User(firstName, lastName, password, email, false);
         }
+
+        /// <summary>
+        /// Create new user
+        /// </summary>
+        /// <returns></returns>
+        public static User createUser(DataRow UserInfo)
+        {
+            return new User(UserInfo);
+        }
+
+        /// <summary>
+        /// Check if the password is correct
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public static bool isCorrectPassword(string email, string password)
+        {
+            return Users.isPasswordCorrect(email, password);
+        }
+
+        /// <summary>
+        /// Get the user info by email
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public static DataSet getUserByEmail(string email)
+        {
+            return MusicStoreDAL.Users.getUserByEmail(email);
+        }
+
+        /// <summary>
+        /// Return all users
+        /// </summary>
+        /// <returns></returns>
+        public static DataSet getAllUsers()
+        {
+            return MusicStoreDAL.Users.ViewAllUsers();
+        }
     }
 }

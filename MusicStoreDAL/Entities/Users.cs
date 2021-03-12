@@ -43,7 +43,7 @@ namespace MusicStoreDAL
         /// Return all the users
         /// </summary>
         /// <returns></returns>
-        public static DataSet ViewAllUser()
+        public static DataSet ViewAllUsers()
         {
             string sql = $"SELECT * FROM {tableName}";
             return OleDbHelper.Fill(sql, tableName);
@@ -113,16 +113,6 @@ namespace MusicStoreDAL
             return OleDbHelper.Fill(sql, tableName);
         }
 
-        /// <summary>
-        /// Return the a requested user Dataset by its email
-        /// </summary>
-        /// <param name="UserID"></param>
-        /// <returns></returns>
-        public static DataSet GetUserByEmail(string email)
-        {
-            string sql = $"SELECT * FROM {tableName} WHERE U_Email = '{email}'";
-            return OleDbHelper.Fill(sql, tableName);
-        }
 
         /// <summary>
         /// Check if user with the request Email Exist
@@ -131,8 +121,14 @@ namespace MusicStoreDAL
         /// <returns></returns>
         public static bool doesEmailExist(string email)
         {
-            DataSet info = GetUserByEmail(email);
+            DataSet info = getUserByEmail(email);
             return info.Tables[0].Rows.Count > 0;
+        }
+
+        public static bool isPasswordCorrect(string email, string password)
+        {
+            string sql = $"SELECT * FROM {tableName} WHERE U_Email = '{email}' AND U_Password = '{password}'";
+            return OleDbHelper.Fill(sql, tableName).Tables[0].Rows.Count > 0;
         }
     }
 }

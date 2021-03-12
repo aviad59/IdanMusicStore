@@ -33,15 +33,6 @@ namespace UI
         protected global::System.Web.UI.WebControls.TextBox firstname;
 
         /// <summary>
-        /// RequiredFirstNameValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFirstNameValidator;
-
-        /// <summary>
         /// RegularExpressionFirstNameValidator control.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace UI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionFirstNameValidator;
+
+        /// <summary>
+        /// RequiredFirstNameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFirstNameValidator;
 
         /// <summary>
         /// Lname control.
@@ -69,15 +69,6 @@ namespace UI
         protected global::System.Web.UI.WebControls.TextBox lastname;
 
         /// <summary>
-        /// RequiredLastNameValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredLastNameValidator;
-
-        /// <summary>
         /// RegularExpressionLastNameValidator control.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,15 @@ namespace UI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionLastNameValidator;
+
+        /// <summary>
+        /// RequiredLastNameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredLastNameValidator;
 
         /// <summary>
         /// Email control.
@@ -105,15 +105,6 @@ namespace UI
         protected global::System.Web.UI.WebControls.TextBox EmailInput;
 
         /// <summary>
-        /// RequiredEmailValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredEmailValidator;
-
-        /// <summary>
         /// RegularExpressionEmailValidator control.
         /// </summary>
         /// <remarks>
@@ -121,6 +112,15 @@ namespace UI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionEmailValidator;
+
+        /// <summary>
+        /// RequiredEmailValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredEmailValidator;
 
         /// <summary>
         /// EmailExistsValidator control.

@@ -20,3 +20,10 @@ html{
     font-family: "Lucida Console", "Courier New", monospace;
     color: darkslategrey;
 }
+
+.nav-item {
+    width: 5%;
+    height: 5%;
+    font-family: "Georgia", Times, serif;
+    color: darkred;
+}

@@ -51,6 +51,15 @@ namespace UI
         protected global::System.Web.UI.WebControls.Button ProductsBtn;
 
         /// <summary>
+        /// CartBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CartBtn;
+
+        /// <summary>
         /// ProfileBtn control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace UI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ProfileBtn;
+
+        /// <summary>
+        /// LogOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button LogOut;
 
         /// <summary>
         /// SignUp control.
@@ -76,15 +94,6 @@ namespace UI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SignIn;
-
-        /// <summary>
-        /// CartBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CartBtn;
 
         /// <summary>
         /// LogoImgBtn control.

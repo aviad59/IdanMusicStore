@@ -47,5 +47,10 @@ namespace UI
             Response.Redirect("Cart.aspx");
         }
 
+        protected void Logout_Click(object sender, EventArgs e)
+        {
+            Session["User"] = null;
+            Response.Redirect("HomePage.aspx");
+        }
     }
 }
