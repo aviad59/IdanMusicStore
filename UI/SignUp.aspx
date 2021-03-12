@@ -8,7 +8,7 @@
         <br />
 
         <div class="form-row" style="margin-left: 25%;">
-            <div class="col-md-4 mb-3">
+            <div>
                 <asp:Label for="firstname" ID="Fname" runat="server" Text="First Name:"></asp:Label>
                 <asp:TextBox ID="firstname" runat="server" CssClass="form-control" placeholder="Enter First Name..." CausesValidation="True"></asp:TextBox>
                 <asp:RequiredFieldValidator ValidationGroup="SignUpValidation" ID="RequiredFirstNameValidator" runat="server" ErrorMessage="Required" ControlToValidate="firstname" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>

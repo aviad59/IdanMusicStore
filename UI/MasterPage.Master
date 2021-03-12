@@ -100,7 +100,7 @@
     </form>
 
     <footer>
-        <p>All rights reserved ©</p>
+        <p style="margin-bottom:5px">All rights reserved ©</p>
     </footer>
 </body>
 </html>

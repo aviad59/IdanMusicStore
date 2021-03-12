@@ -39,7 +39,7 @@ namespace UI
         }        
         protected void SignIn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SignUp.aspx");
+            Response.Redirect("SignIn.aspx");
         }
 
         protected void CartBtn_Click(object sender, EventArgs e)

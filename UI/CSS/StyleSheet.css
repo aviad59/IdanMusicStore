@@ -8,15 +8,15 @@ html{
 
 .p1 {
     font-family: "Georgia", Times, serif;
-    color: #EDF5E1;
+    color: darkred;
 }
 
 .p2 {
     font-family: "Georgia", Helvetica, sans-serif;
-    color: whitesmoke;
+    color: darkslategrey;
 }
 
 .p3 {
     font-family: "Lucida Console", "Courier New", monospace;
-    color: whitesmoke;
+    color: darkslategrey;
 }
